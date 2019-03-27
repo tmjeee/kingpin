@@ -1,0 +1,16 @@
+{
+  "name": "kingpin-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "link": "npx npm link",
+    "compile": "npx rimraf dist && npx tsc --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "typescript": "^3.3.3"
+  }
+}

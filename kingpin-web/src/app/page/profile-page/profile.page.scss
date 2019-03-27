@@ -1,0 +1,34 @@
+
+
+@import "../../../theme/styles";
+
+
+.profile-page {
+  ::ng-deep .ui-tabview {
+    width: 500px;
+    height: 70vh;
+    .email {
+
+    }
+    .password {
+
+    }
+    .avatar {
+      position: relative;
+      width: 40px;
+      margin: auto;
+      .picture {
+        width:40px;
+        height: auto;
+        border-radius: 50%;
+      }
+      .avatar-edit-icon {
+        position: absolute;
+        bottom:0px;
+        right: -15px;
+        cursor: pointer;
+        color: $color-one-theta;
+      }
+    }
+  }
+}

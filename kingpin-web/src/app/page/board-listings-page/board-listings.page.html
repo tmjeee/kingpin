@@ -1,0 +1,58 @@
+<div class="board-listings-page" *ngIf="ready">
+  <div class="p-grid p-dir-col">
+    <div class="p-col">
+      <button type="button" pButton label="Create" (click)="createBoard($event)"></button>
+    </div>
+    <div class="p-col">
+      <p-table [columns]="cols" [value]="boardListings.boardListings">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-board let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              <ng-container *ngIf="col.field == 'name'">
+                {{board.name}}
+              </ng-container>
+              <ng-container *ngIf="col.field == 'description'">
+                {{board.description}}
+              </ng-container>
+              <ng-container *ngIf="col.field == 'creationDate'">
+                {{board.creationDate}}
+              </ng-container>
+              <ng-container *ngIf="col.field == 'owner'">
+                <img src="{{board.owner?.avatarUrl}}">{{board.owner?.name}}
+              </ng-container>
+              <ng-container *ngIf="col.field == 'players'">
+                <ng-container *ngFor="let player of board.players">
+                  <img src="{{player?.avatarUrl}}">{{player?.name}}
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="col.field == 'actions'">
+                <button pButton
+                        [disabled]="alreadyPlayerOfBoard(board)"
+                        type="button"
+                        label="Join"
+                        (click)="onJoinBoardClicked($event, board)">
+                </button>
+                <button pButton
+                        type="button"
+                        label="View"
+                        (click)="onViewBoardClicked($event,board)">
+                </button>
+              </ng-container>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          No Boards available.
+        </ng-template>
+      </p-table>
+
+    </div>
+  </div>
+</div>

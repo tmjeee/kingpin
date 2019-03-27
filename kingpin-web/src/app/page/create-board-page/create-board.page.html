@@ -1,0 +1,40 @@
+<div class="create-board-page">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit($event)">
+  <div class="p-grid p-dir-col">
+    <div class="p-col p-col-align-center ">
+      <div class="name">
+        <div class="title">Name</div>
+        <div>
+          <input [formControl]="formControlName" type="text" pInputText>
+        </div>
+        <div class="errors" *ngIf="(formControlName.touched || formControlName.dirty) && formControlName.invalid">
+          <p-message *ngIf="formControlName.errors.required" severity="error" text="Name is required"></p-message>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-col p-col-align-center ">
+      <div class="description">
+        <div class="title">Description</div>
+        <div>
+          <input [formControl]="formControlDescription" type="text" pInputText>
+        </div>
+        <div class="errors" *ngIf="(formControlDescription.touched || formControlDescription.dirty) && formControlDescription.invalid">
+          <p-message *ngIf="formControlDescription.errors.required" severity="error" text="Description is required"></p-message>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-col p-col-align-center">
+      <div class="p-grid controls">
+        <div class="p-col-fixed">
+          <button type="button" pButton label="Back to Listings" (click)="onBackToListings($event)"></button>
+        </div>
+        <div class="p-col-fixed">
+          <button type="submit" [disabled]="formGroup.invalid" pButton label="Submit"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>

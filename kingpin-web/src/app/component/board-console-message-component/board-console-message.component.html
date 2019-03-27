@@ -1,0 +1,11 @@
+<div class="board-console-message-component">
+  <p-scrollPanel>
+    <div *ngFor="let wsMessage of wsMessages" class="messages">
+      <div class="message">
+        <span class="date">{{wsMessage.date}}</span>
+        <span class="summary">[{{wsMessage.summary}}]</span>-
+        <span class="detail">{{wsMessage.detail}}</span>
+      </div>
+    </div>
+  </p-scrollPanel>
+</div>

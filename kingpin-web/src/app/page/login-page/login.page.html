@@ -1,0 +1,42 @@
+<div class="login-page p-grid p-dir-col p-align-center">
+  <div class="p-col-fixed frame">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit($event)">
+      <p-card>
+        <p-header>
+          <div class="title">Login</div>
+        </p-header>
+        <div class="p-grid p-dir-col body">
+          <div class="p-col">
+            <input [formControl]="formControlEmail" pInputText placeholder="email">
+            <div class="errors" *ngIf="(formControlEmail.touched || formControlEmail.dirty) && formControlEmail.invalid">
+              <div class="error">
+                <p-message *ngIf="formControlEmail.errors.required" severity="error" text="Email is required"></p-message>
+              </div>
+              <div class="error">
+                <p-message *ngIf="formControlEmail.errors.email" severity="error" text="Email is invalid"></p-message>
+              </div>
+            </div>
+          </div>
+          <div class="p-col">
+            <input [formControl]="formControlPassword" pPassword placeholder="Password">
+            <div class="errors" *ngIf="(formControlPassword.touched || formControlPassword.dirty) && formControlPassword.invalid">
+              <div class="error">
+                <p-message *ngIf="formControlPassword.errors.required" severity="error" text="Password is required"></p-message>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="p-grid p-justify-center control">
+            <div class="p-col-fixed">
+              <button pButton type="button" (click)="onRegisterClicked($event)" label="Register"></button>
+            </div>
+            <div class="p-col-fixed">
+              <button pButton type="submit" [disabled]="formGroup.invalid" label="Login"></button>
+            </div>
+          </div>
+        </p-footer>
+      </p-card>
+    </form>
+  </div>
+</div>

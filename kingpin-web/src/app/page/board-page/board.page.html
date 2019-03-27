@@ -1,0 +1,39 @@
+<div class="board-page">
+  <div class="p-grid">
+    <div class="p-col-fixed p-nopad board-col">
+      <div class="board-location">
+        <ng-container *ngIf="ready">
+          <board-component [board]="board" [movement]="movement"></board-component>
+        </ng-container>
+        <ng-container *ngIf="!ready">
+          Board not ready
+        </ng-container>
+      </div>
+    </div>
+    <div class="p-col p-nopad">
+      <div class="p-grid p-dir-col">
+        <div class="p-col">
+          <button pButton type="button" label="Move" (click)="move()"></button>
+          <button pButton type="button" label="Confirmation" (click)="confirmation()"></button>
+          <button pButton type="button" label="Auction" (click)="auction()"></button>
+          <button pButton type="button" label="Mortgage" (click)="mortgage()"></button>
+          <button pButton type="button" label="OfferSale" (click)="offerSale()"></button>
+          <button pButton type="button" label="AcceptSale" (click)="acceptSale()"></button>
+        </div>
+        <div class="p-col statistics">
+          <board-player-table [myself]="myself" [players]="players"></board-player-table>
+        </div>
+        <div class="p-col messages">
+          <div class="p-grid">
+            <div class="p-col p-nopad-left">
+              <board-console-message [observable]="wsService.subjectReply"></board-console-message>
+            </div>
+            <div class="p-col p-nopad-right">
+              <board-chat [observer]="wsService.subjectBroadcast" (events)="onChatEvents($event)"></board-chat>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

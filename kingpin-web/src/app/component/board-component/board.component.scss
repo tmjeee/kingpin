@@ -1,0 +1,127 @@
+.board-component {
+
+  $border-color-alpha: #cccccc;
+  $background-color-alpha: #f6f6f6;
+  $color-alpha: #1c94c4;
+
+  $border-color-beta: #fbcb09;
+  $background-color-beta: #fdf5ce;
+  $color-beta: #c77405;
+
+  $measurement-1: 90px;
+  $measurement-2: 60px;
+
+  %square {
+    width: $measurement-1;
+    height: $measurement-1;
+    color: $color-alpha;
+    background-color: $background-color-alpha;
+    border-color: $border-color-alpha;
+    &.selected {
+      color: $color-beta;
+      background-color: $background-color-beta;
+    }
+  }
+
+  %top-and-bottom-rectangle {
+    width: $measurement-2;
+    height: $measurement-1;
+    color: $color-alpha;
+    background-color: $background-color-alpha;
+    border-color: $border-color-alpha;
+    &.selected {
+      color: $color-beta;
+      background-color: $background-color-beta;
+    }
+  }
+
+  %left-and-right-rectangle {
+    width: $measurement-1;
+    height: $measurement-2;
+    color: $color-alpha;
+    background-color: $background-color-alpha;
+    border-color: $border-color-alpha;
+    &.selected {
+      color: $color-beta;
+      background-color: $background-color-beta;
+    }
+  }
+
+  .board {
+    $total-width: ($measurement-1 * 2) + ($measurement-2 * 9);
+    $total-height: ($measurement-1 * 2) + ($measurement-2 * 9);
+
+    min-width: $total-width;
+    max-width: $total-width;
+    min-height: $total-height;
+    max-height: $total-height;
+
+    .step {
+
+    }
+
+    .step-square-top-left {
+      @extend %square;
+      box-sizing:border-box;
+      border-top: solid 1px ;
+      border-left: solid 1px ;
+      border-bottom: solid 1px ;
+    }
+    .step-square-top-right {
+      @extend %square;
+      box-sizing:border-box;
+      border-top: solid 1px ;
+      border-right: solid 1px ;
+      border-left: solid 1px ;
+      border-bottom: solid 1px ;
+    }
+    .step-square-bottom-left {
+      @extend %square;
+      box-sizing:border-box;
+      border-left: solid 1px ;
+      border-bottom: solid 1px ;
+    }
+    .step-square-bottom-right {
+      @extend %square;
+      box-sizing:border-box;
+      border-right: solid 1px ;
+      border-bottom: solid 1px ;
+      border-left: solid 1px ;
+    }
+    .step-rectangle-top {
+      @extend %top-and-bottom-rectangle;
+      box-sizing:border-box;
+      border-top: solid 1px ;
+      border-bottom: solid 1px ;
+      border-left: solid 1px ;
+    }
+    .step-rectangle-bottom {
+      @extend %top-and-bottom-rectangle;
+      box-sizing:border-box;
+      border-top: solid 1px ;
+      border-bottom: solid 1px ;
+      border-left: solid 1px ;
+    }
+    .step-rectangle-left {
+      @extend %left-and-right-rectangle;
+      box-sizing:border-box;
+      border-left: solid 1px ;
+      border-right: solid 1px ;
+      border-bottom: solid 1px ;
+    }
+    .step-rectangle-right {
+      @extend %left-and-right-rectangle;
+      box-sizing:border-box;
+      border-left: solid 1px ;
+      border-right: solid 1px ;
+      border-bottom: solid 1px ;
+    }
+
+    .step-between-rect {
+      box-sizing:border-box;
+      width: ($measurement-2 * 9);
+      height:($measurement-2 * 9);
+    }
+  }
+
+}

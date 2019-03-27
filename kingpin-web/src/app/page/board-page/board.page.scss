@@ -1,0 +1,22 @@
+.board-page {
+  .board-col {
+    width: 720px;
+    .board-location {
+      position: fixed;
+      left: 0px;
+      top: 50px;
+    }
+  }
+
+  .statistics {
+    ::ng-deep .ui-tabview {
+      height: 300px;
+    }
+  }
+  .messages {
+    ::ng-deep .ui-scrollpanel {
+      width: 100%;
+      height: 400px;
+    }
+  }
+}

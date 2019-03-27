@@ -1,0 +1,70 @@
+<div class="register-page">
+  <div class="p-grid p-justify-center">
+   <div class="p-col-fixed frame">
+     <form [formGroup]="formGroup" enctype="multipart/form-data" (ngSubmit)="onSubmit($event)">
+       <div class="p-grid p-dir-col">
+
+         <div class="p-col">
+           <h1>Registration</h1>
+         </div>
+
+         <div class="p-col email">
+           <div class="text">Email</div>
+           <div class="field">
+             <input class="email-input" [formControl]="formControlEmail" type="text" pInputText placeholder="Email">
+           </div>
+           <div class="errors" *ngIf="(formControlEmail.touched || formControlEmail.dirty) && formControlEmail.invalid">
+             <p-message *ngIf="formControlEmail.errors.required" severity="error" text="Email required"></p-message>
+             <p-message *ngIf="formControlEmail.errors.email" severity="error" text="Email invalid"></p-message>
+           </div>
+         </div>
+
+
+         <div class="p-col name">
+           <div class="text">Name</div>
+           <div class="field">
+             <input class="name-input" [formControl]="formControlName" type="text" pInputText placeholder="Name">
+           </div>
+           <div class="errors" *ngIf="(formControlName.touched || formControlName.dirty) && formControlName.invalid">
+             <p-message *ngIf="formControlName.errors.required" severity="error" text="Name required"></p-message>
+             <p-message *ngIf="formControlName.errors.email" severity="error" text="Name invalid"></p-message>
+           </div>
+         </div>
+
+
+
+         <div class="p-col password">
+           <div class="text">Password</div>
+           <div class="field">
+             <input class="password-input" [formControl]="formControlPassword" type="password" pPassword placeholder="Password">
+           </div>
+           <div class="errors">
+             <ng-container *ngIf="(formControlPassword.touched || formControlPassword.dirty) && formControlPassword.invalid  ">
+               <p-message *ngIf="formControlPassword.errors.required" severity="error" text="Password required"></p-message>
+             </ng-container>
+             <p-message *ngIf="formGroup.errors?.equalPassword" severity="error" text="Unmatched password"></p-message>
+           </div>
+         </div>
+
+         <div class="p-col confirm-password">
+           <div class="text">Confirm password</div>
+           <div class="field">
+             <input class="confirm-password-input" [formControl]="formControlConfirmPassword" type="password" pPassword placeholder="Confirm password">
+           </div>
+           <div class="errors">
+             <ng-container *ngIf="(formControlConfirmPassword.touched || formControlConfirmPassword.dirty ) && formControlConfirmPassword.invalid ">
+               <p-message *ngIf="formControlConfirmPassword.errors.required" severity="error" text="Password required"></p-message>
+             </ng-container>
+             <p-message *ngIf="formGroup.errors?.equalPassword" severity="error" text="Unmatched password"></p-message>
+           </div>
+         </div>
+
+
+         <div class="p-col p-col-align-center control">
+           <button pButton type="submit" label="Save" [disabled]="formGroup.invalid"></button>
+         </div>
+       </div>
+     </form>
+   </div>
+  </div>
+</div>

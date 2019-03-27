@@ -1,0 +1,22 @@
+
+@import "../../../theme/styles";
+
+.login-page {
+  .frame {
+    margin-top: 40px;
+    width: 350px;
+    .title{
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .body {
+      input {
+        width: 100%;
+      }
+      .errors {
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div class="profile-page">
+  <div class="p-grid p-dir-col p-align-center">
+
+    <div class="p-col">
+     Profile
+    </div>
+    <div class="p-col">
+      <p-tabView>
+        <!-- Email Tab -->
+        <p-tabPanel header="Email">
+          <form [formGroup]="formGroupEmail" (ngSubmit)="onEmailSubmit($event)">
+            <div class="email">
+              <div>
+                Email
+              </div>
+              <div>
+                <input [formControl]="formControlEmail" type="text" pInputText placeholder="Email">
+                <div class="errors" *ngIf="(formControlEmail.touched || formControlEmail.dirty) && formControlEmail.invalid">
+                  <p-message severity="error" *ngIf="formControlEmail.errors.required" text="Email required"></p-message>
+                  <p-message severity="error" *ngIf="formControlEmail.errors.email" text="Email Invalid"></p-message>
+                </div>
+              </div>
+              <div>
+                <button pButton type="submit" [disabled]="formGroupEmail.invalid"
+                        label="Save Email"></button>
+              </div>
+            </div>
+          </form>
+        </p-tabPanel>
+
+
+
+        <!-- password tab -->
+        <p-tabPanel header="Password">
+          <form [formGroup]="formGroupPassword" (ngSubmit)="onPasswordSubmit($event)">
+            <div class="password">
+              <div>
+                Password
+              </div>
+              <div>
+                <input type="password" [formControl]="formControlPassword" pPassword placeholder="Password">
+                <div class="error">
+                  <ng-container *ngIf="(formControlPassword.touched || formControlPassword.dirty) && formControlPassword.invalid">
+                    <p-message *ngIf="formControlPassword.errors.required" severity="error" text="Invalid Confirm Password"></p-message>
+                  </ng-container>
+                  <p-message *ngIf="formGroupPassword.errors?.equalPassword" severity="error" text="Password not equals"></p-message>
+                </div>
+              </div>
+              <div>
+                Confirm Password
+              </div>
+              <div>
+                <input type="password" [formControl]="formControlConfirmPassword" pPassword placeholder="Confirm Password">
+                <div class="error">
+                  <ng-container *ngIf="(formControlConfirmPassword.touched || formControlConfirmPassword.dirty) && formControlConfirmPassword.invalid">
+                    <p-message *ngIf="formControlConfirmPassword.errors.required" severity="error" text="Invalid Confirm Password"></p-message>
+                  </ng-container>
+                  <p-message *ngIf="formGroupPassword.errors?.equalPassword" severity="error" text="Password not equals"></p-message>
+                </div>
+              </div>
+              <div>
+                <button [disabled]="formGroupPassword.invalid" pButton type="submit" label="Save Password"></button>
+              </div>
+            </div>
+          </form>
+        </p-tabPanel>
+
+
+
+        <!-- Avatar tab -->
+        <p-tabPanel header="Avatar">
+          <div class="avatar">
+            <div class="text">Avatar</div>
+            <div class="field">
+              <img class="picture" src="{{host+'avatar/'+myself._id}}">
+              <span class="avatar-edit-icon" (click)="onEditAvatar($event)">
+              <i class="fas fa-user-edit"></i>
+                {{myself|json}}
+            </span>
+            </div>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+
+  <!-- avatar upload popup -->
+  <p-dialog
+            [closable]="true"
+            [positionTop]="30"
+            [modal]="true"
+            [closeOnEscape]="true"
+            [(visible)]="editAvatarDialogVisible">
+    <p-header>
+      Avatar upload
+    </p-header>
+      <p-fileUpload accept="image/*"
+                    name="avatar"
+                    [customUpload]="true"
+                    (uploadHandler)="onAvatarUpload($event)"
+                    [multiple]="false">
+      </p-fileUpload>
+    <p-footer>
+      <button type="button" pButton label="Submit" (click)="editAvatarDialogVisible=false;"></button>
+    </p-footer>
+  </p-dialog>
+</div>

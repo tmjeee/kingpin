@@ -1,0 +1,13 @@
+<div class="board-chat-component">
+  <p-scrollPanel>
+    <div *ngFor="let _m of messages;">
+      <div class="messages">
+        <span class="date">{{_m.date}}</span>
+        <span class="name">{{_m.name}}</span> -
+        <span class="message">{{_m.message}}</span>
+      </div>
+    </div>
+  </p-scrollPanel>
+  <textarea pInputTextarea [(ngModel)]="message" class="broadcast-text"></textarea>
+  <button class="send-broadcast-button" pButton label="Send" (click)="sendBroadcast($event)"></button>
+</div>

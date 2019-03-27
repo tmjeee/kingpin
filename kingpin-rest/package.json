@@ -1,0 +1,41 @@
+{
+  "name": "kingpin-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "link": "npx npm link kingpin-common",
+    "compile": "npx rimraf dist && npx tsc --build && npx copyfiles assets/**/* dist/",
+    "node": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/crypto-js": "^3.1.43",
+    "@types/express": "^4.16.1",
+    "@types/jwt-simple": "^0.5.33",
+    "@types/multer": "^1.3.7",
+    "@types/mysql": "^2.15.5",
+    "@types/nedb": "^1.8.7",
+    "@types/node": "^10.12.29",
+    "@types/q": "^1.5.1",
+    "@types/ws": "^6.0.1",
+    "copyfiles": "^2.1.0",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.5",
+    "kingpin-common": "1.0.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "nedb": "^1.8.0",
+    "q": "^1.5.1",
+    "ws": "^6.1.4"
+  }
+}

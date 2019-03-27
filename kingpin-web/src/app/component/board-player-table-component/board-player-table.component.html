@@ -1,0 +1,75 @@
+<div class="board-player-table-component">
+          <p-table [value]="players" dataKey="_id">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width:30px"></th>
+                <th>ID</th>
+                <th>You?</th>
+                <th>Name</th>
+                <th>Avatar</th>
+                <th>Cash</th>
+                <th>No. Assets</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-player let-expanded="expanded">
+              <tr>
+                <td>
+                  <a href="#" [pRowToggler]="player">
+                    <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                  </a>
+                </td>
+                <td>{{player._id}}</td>
+                <td>
+                  <i [ngClass]="(myself._id == player._id) ? 'fas fa-check' : 'fas fa-times'"></i>
+                </td>
+                <td>{{player.name}}</td>
+                <td><avatar-component [player]="player"></avatar-component></td>
+                <td>{{player.cash}}</td>
+                <td>{{player.ownedItems.length}}</td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="rowexpansion" let-player>
+              <tr>
+                <td [attr.colspan]="7">
+                  <p-table [value]="player.ownedItems">
+                    <ng-template pTemplate="header">
+                      <tr>
+                        <th>Type</th>
+                        <th>Houses</th>
+                        <th>Hotels</th>
+                        <th>Cost</th>
+                        <th>Mortgaged</th>
+                      </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item>
+                      <tr *ngIf="item.type == 'street'">
+                        <td>{{item.type}}</td>
+                        <td>{{item.houses}}</td>
+                        <td>{{item.hotels}}</td>
+                        <td>{{item.cost}}</td>
+                        <td>{{item.mortgage}}</td>
+                      </tr>
+                      <tr *ngIf="item.type == 'utility'">
+                        <td>{{item.type}}</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>{{item.cost}}</td>
+                        <td>{{item.mortgage}}</td>
+                      </tr>
+                      <tr *ngIf="item.type == 'station'">
+                        <td>{{item.type}}</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>{{item.cost}}</td>
+                        <td>{{item.mortgage}}</td>
+                      </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                      No Assets yet!
+                    </ng-template>
+                  </p-table>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+</div>

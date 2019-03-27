@@ -1,0 +1,167 @@
+<div class="board-component p-grid p-justify-center p-align-center">
+  <div class="board p-col-fixed">
+    <div class="p-grid p-dir-col">
+      <div class="p-col p-nopad"> <!-- row -->
+        <div class="p-grid">
+          <div class="p-col-fixed p-nopad step step-square-top-left" [ngClass]="{'selected':(ITEM_FREE_PARKING==selectedItem)}" pTooltip="Free Parking">  <!-- col -->
+            <item-component #item_free_parking [item]="ITEM_FREE_PARKING" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_STRAND==selectedItem)}" pTooltip="Strand">
+            <item-component #item_strand [item]="ITEM_STRAND" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_CHANCE_2==selectedItem)}" pTooltip="Chance 2">
+            <item-component #item_chance_2 [item]="ITEM_CHANCE_2" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_FLEET_STREET==selectedItem)}" pTooltip="Fleet Street">
+            <item-component #item_fleet_street [item]="ITEM_FLEET_STREET" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_TRAFALGAR_SQUARE==selectedItem)}" pTooltip="Trafalgar Square">
+            <item-component #item_trafalgar_square [item]="ITEM_TRAFALGAR_SQUARE" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_FENCHURCH_STREET_STATION==selectedItem)}" pTooltip="Fenchurch Street Station">
+            <item-component #item_fenchurch_street_station [item]="ITEM_FENCHURCH_STREET_STATION" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_LEICESTER_SQUARE==selectedItem)}" pTooltip="Leicester Squarea">
+            <item-component #item_leicester_square [item]="ITEM_LEICESTER_SQUARE" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_COVENTRY_STREET==selectedItem)}" pTooltip="Coventry Street">
+            <item-component #item_coventry_street [item]="ITEM_COVENTRY_STREET" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_WATER_WORKS==selectedItem)}" pTooltip="Water Works">
+            <item-component #item_water_works [item]="ITEM_WATER_WORKS" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-top" [ngClass]="{'selected':(ITEM_PICCADILLY==selectedItem)}" pTooltip="Piccadilly">
+            <item-component #item_piccadilly [item]="ITEM_PICCADILLY" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-square-top-right" [ngClass]="{'selected':(ITEM_GO_TO_JAIL==selectedItem)}" pTooltip="Go to Jail">
+            <item-component #item_go_to_jail [item]="ITEM_GO_TO_JAIL" (click)="onItemClicked($event)"></item-component>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-col p-nopad"> <!-- row -->
+        <div class="p-grid">
+          <div class="p-col p-nopad">
+            <div class="p-grid p-dir-col">
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_VINE_STREET==selectedItem)}" pTooltip="Vine Street">
+                <item-component #item_vine_street [item]="ITEM_VINE_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_MALBOROUGH_STREET==selectedItem)}" pTooltip="Malborough Street">
+                <item-component #item_malborough_street [item]="ITEM_MALBOROUGH_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_COMMUNITY_CHESS_2==selectedItem)}" pTooltip="Community Chess 2">
+                <item-component #item_community_chess_2 [item]="ITEM_COMMUNITY_CHESS_2" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_BOW_STREET==selectedItem)}" pTooltip="Bow Street">
+                <item-component #item_bow_street [item]="ITEM_BOW_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_MARYLEBONE_STATION==selectedItem)}" pTooltip="Marylebone Station">
+                <item-component #item_marylebone_station [item]="ITEM_MARYLEBONE_STATION" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_NORTHUMBERLAND_AVENUE==selectedItem)}" pTooltip="Northumberland Avenue">
+                <item-component #item_northumberland_avenue [item]="ITEM_NORTHUMBERLAND_AVENUE" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_WHITEHALL==selectedItem)}" pTooltip="Whitehall">
+                <item-component #item_whitehall [item]="ITEM_WHITEHALL" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_ELECTRIC_COMPANY==selectedItem)}" pTooltip="Electric Company">
+                <item-component #item_electric_company [item]="ITEM_ELECTRIC_COMPANY" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-left p-nopad" [ngClass]="{'selected':(ITEM_PALL_MALL==selectedItem)}" pTooltip="Pall Mall">
+                <item-component #item_pall_mall [item]="ITEM_PALL_MALL" (click)="onItemClicked($event)"></item-component>
+              </div>
+            </div>
+          </div>
+          <div class="p-col-fixed step step-between-rect p-nopad">
+            <div class="p-grid p-justify-center p-align-center">
+              <div class="p-col">
+                <p-card [header]="selectedItem.name" *ngIf="selectedItem">
+                  <div class="p-grid">
+                    <div class="p-col">one</div>
+                    <div class="p-col">two</div>
+                  </div>
+                  <div class="p-grid">
+                    <div class="p-col">three</div>
+                    <div class="p-col">four</div>
+                  </div>
+                  <div class="p-grid">
+                    <div class="p-col">five</div>
+                    <div class="p-col">six</div>
+                  </div>
+                </p-card>
+              </div>
+            </div>
+          </div>
+          <div class="p-col p-nopad">
+            <div class="p-grid p-dir-col">
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_REGENT_STREET==selectedItem)}" pTooltip="Regent Street">
+                <item-component #item_regent_street [item]="ITEM_REGENT_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_OXFORD_STREET==selectedItem)}" pTooltip="Oxford Street">
+                <item-component #item_oxford_street [item]="ITEM_OXFORD_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_COMMUNITY_CHESS_3==selectedItem)}" pTooltip="Community Chess 3">
+                <item-component #item_community_chess_3 [item]="ITEM_COMMUNITY_CHESS_3" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_BOND_STREET==selectedItem)}" pTooltip="Bond Street">
+                <item-component #item_bond_street [item]="ITEM_BOND_STREET" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_LIVERPOOL_STREET_STATION==selectedItem)}" pTooltip="Liverpool Street Station">
+                <item-component #item_liverpool_street_station [item]="ITEM_LIVERPOOL_STREET_STATION" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_CHANCE_3==selectedItem)}" pTooltip="Chance 3">
+                <item-component #item_chance_3 [item]="ITEM_CHANCE_3" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_PARK_LANE==selectedItem)}" pTooltip="Park Lane">
+                <item-component #item_park_lane [item]="ITEM_PARK_LANE" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step  step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_SUPERTAX==selectedItem)}" pTooltip="Supertax">
+                <item-component #item_supertax [item]="ITEM_SUPERTAX" (click)="onItemClicked($event)"></item-component>
+              </div>
+              <div class="p-col-fixed step step-rectangle-right p-nopad" [ngClass]="{'selected':(ITEM_MAYFAIR==selectedItem)}" pTooltip="Mayfair">
+                <item-component #item_mayfair [item]="ITEM_MAYFAIR" (click)="onItemClicked($event)"></item-component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-col p-nopad"> <!-- row -->
+        <div class="p-grid">
+          <div class="p-col-fixed p-nopad step step-square-bottom-left" [ngClass]="{'selected':(ITEM_JUST_VISITING_OR_JAIL==selectedItem)}" pTooltip="Just visiting or Jail">
+            <item-component #item_just_visiting_or_jail [item]="ITEM_JUST_VISITING_OR_JAIL" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_PENTONVILLE_ROAD==selectedItem)}" pTooltip="Pentonville Road">
+            <item-component #item_pentonville_road [item]="ITEM_PENTONVILLE_ROAD" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_EUSTON_ROAD==selectedItem)}" pTooltip="Euston Road">
+            <item-component #item_euston_road [item]="ITEM_EUSTON_ROAD" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_CHANCE_1==selectedItem)}" pTooltip="Chance #1">
+            <item-component #item_chance_1 [item]="ITEM_CHANCE_1" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_THE_ANGLE_ISLINGTON==selectedItem)}" pTooltip="The Angle Islington">
+            <item-component #item_the_angle_islington [item]="ITEM_THE_ANGLE_ISLINGTON" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_KING_CROSS_STATION==selectedItem)}" pTooltip="Kings Cross Station">
+            <item-component #item_king_cross_station [item]="ITEM_KING_CROSS_STATION" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_INCOME_TAX==selectedItem)}" pTooltip="Income Tax">
+            <item-component #item_income_tax [item]="ITEM_INCOME_TAX" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_WHITECHAPEL_ROAD==selectedItem)}" pTooltip="Whitechapel Road">
+            <item-component #item_whitechapel_road [item]="ITEM_WHITECHAPEL_ROAD" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_COMMUNITY_CHESS_1==selectedItem)}" pTooltip="Community Chess #1">
+            <item-component #item_community_chess_1 [item]="ITEM_COMMUNITY_CHESS_1" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-rectangle-bottom" [ngClass]="{'selected':(ITEM_OLD_KENT_ROAD==selectedItem)}" pTooltip="Old Kent Road">
+            <item-component #item_old_kent_road [item]="ITEM_OLD_KENT_ROAD" (click)="onItemClicked($event)"></item-component>
+          </div>
+          <div class="p-col-fixed p-nopad step step-square-bottom-right" [ngClass]="{'selected':(ITEM_GO==selectedItem)}" pTooltip="GO">
+            <item-component #item_go [item]="ITEM_GO" (click)="onItemClicked($event)"></item-component>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

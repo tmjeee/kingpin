@@ -1,0 +1,60 @@
+@import "../../../theme/styles";
+
+.register-page {
+  .frame {
+    margin-top: 40px;
+    width: 300px;
+    .email {
+      .text {
+      }
+      .field {
+        .email-input {
+          width: 100%;
+        }
+      }
+    }
+
+    .name {
+      .text {
+      }
+      .field {
+        .name-input {
+          width: 100%;
+        }
+      }
+    }
+
+    .password {
+      .text {
+      }
+      .field {
+        .password-input {
+          width: 100%;
+        }
+      }
+    }
+
+    .confirm-password {
+      .text {
+      }
+      .field {
+        .confirm-password-input {
+          width: 100%;
+        }
+      }
+    }
+
+    .avatar {
+      .text {
+
+      }
+      .field {
+        width: 100%;
+      }
+    }
+
+    .control {
+
+    }
+  }
+}

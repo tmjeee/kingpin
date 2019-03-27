@@ -1,0 +1,19 @@
+<div class="item-component">
+  <div class="p-grid">
+    <div class="p-col p-nopad" (click)="onClicked($event)">
+      {{item.name}}
+      <ng-container *ngFor="let player of item.playersOnItem">
+        <avatar-component [player]="player"></avatar-component>
+      </ng-container>
+      <avatar-component *ngIf="item.playerPassingByItem" [player]="item.playerPassingByItem"></avatar-component>
+    </div>
+  </div>
+  <!--
+  <div class="popup">
+    <ng-container *ngFor="let player of item.playersOnItem">
+      <avatar-component [player]="player"></avatar-component>
+    </ng-container>
+    <avatar-component *ngIf="item.playerPassingByItem" [player]="item.playerPassingByItem"></avatar-component>
+  </div>
+  -->
+</div>
